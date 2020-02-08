@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.SetmealMapper">
+    <insert id="add" parameterType="com.itheima.pojo.Setmeal">
+        <!--通过mybatis框架提供的selectKey 来获取自增的id  它会通过keyProperty自动的封装到 CheckGroup Id的属性中去-->
+        <selectKey order="AFTER"  keyProperty="id" resultType="java.lang.Integer" >
+            select last_insert_Id()
+        </selectKey>
+        insert into t_setmeal (code,name,helpCode,sex,age,price,remark,attention,img)
+                values
+        (#{code},#{name},#{helpCode},#{sex},#{age},#{price},#{remark},#{attention},#{img})
+    </insert>
+
+    <!--添加中间表的关联 -->
+    <insert id="setSetmealAndCheckGroup" parameterType="map">
+        insert into t_setmeal_checkgroup values(#{setmealId},#{checkGroupId})
+    </insert>
+
+    <!--分页展示 -->
+    <select id="findPage" parameterType="string" resultType="com.itheima.pojo.Setmeal">
+        select * from t_setmeal
+        <if test=" value!=null and value.length >0 and value!= ''">
+            where name=#{value} or code=#{value} or helpCode=#{value}
+        </if>
+    </select>
+</mapper>
