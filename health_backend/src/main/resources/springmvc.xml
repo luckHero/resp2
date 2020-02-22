@@ -3,12 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://code.alibabatech.com/schema/dubbo
-        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!--配置json转换器 -->
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
@@ -31,9 +32,10 @@
     <!--指定服务中心的地址 -->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <!--批量扫描 -->
-    <dubbo:annotation package="com.itheima.controller"/>
+    <dubbo:annotation package="com.itheima"/>
     <!-- 设置超时时间-->
     <dubbo:consumer timeout="600000" check="false"/>
+
 
 
     <!--文件上传组件,由springMVC提供 -->
@@ -43,4 +45,5 @@
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
     <import resource="spring-redis.xml"/>
+    <import resource="spring-security.xml"/>
 </beans>

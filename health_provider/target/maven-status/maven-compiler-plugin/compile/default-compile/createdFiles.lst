@@ -1,0 +1,12 @@
+com\itheima\mapper\CheckItemMapper.class
+com\itheima\mapper\MemberMapper.class
+com\itheima\mapper\CheckGroupMapper.class
+com\itheima\mapper\OrderMapper.class
+com\itheima\service\impl\CheckGroupServiceImpl.class
+com\itheima\service\impl\SetmealServiceImpl.class
+com\itheima\mapper\OrderSettingMapper.class
+com\itheima\mapper\SetmealMapper.class
+com\itheima\service\impl\OrderSettingServiceImpl.class
+com\itheima\service\impl\OrderServiceImpl.class
+com\itheima\service\impl\CheckItemServiceImpl.class
+com\itheima\service\impl\MemberServiceImpl.class

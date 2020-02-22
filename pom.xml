@@ -13,6 +13,9 @@
         <module>health_interface</module>
         <module>health_provider</module>
         <module>health_backend</module>
+        <module>health_jobs</module>
+        <module>health_mobile</module>
+
     </modules>
 
     <!--版本管理,防止依赖冲突 -->
