@@ -17,8 +17,8 @@ import java.io.InputStream;
  * 七牛云工具类
  */
 public class QiniuUtils {
-    public  static String accessKey = "krbF9POOE4J0Cnm6X2Eahye779xmXB8vcTjTo9hw";
-    public  static String secretKey = "1zEYwcy000QwmNZMElvN1mPCNjKUi8AQLmoCtM19";
+    public  static String accessKey = "";
+    public  static String secretKey = "";
     public  static String bucket = "hyq-repertory";
 
     public static void upload2Qiniu(String filePath,String fileName){
